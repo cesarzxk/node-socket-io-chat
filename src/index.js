@@ -18,9 +18,7 @@ io.on('connection', function (socket) {
         socket.to(server).emit('messages', { message: message, id: id, date: date });
     });
 });
-io.on('disconnect', function () {
-    console.log('usuario desconectado');
-});
+
 var rooms = function () { };
 exports.rooms = rooms;
 server.listen(process.env.PORT || 3333, function () {
