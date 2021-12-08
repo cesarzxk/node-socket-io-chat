@@ -1,5 +1,5 @@
-import express from 'express';
-import http from 'http';
+import * as express from 'express';
+import * as http from 'http'
 import { Server, Socket} from "socket.io";
 const app = express()
 const server = http.createServer(app);
@@ -23,7 +23,7 @@ io.on('disconnect', ()=>{
 
 export const rooms = ()=>{}
 
-server.listen(3333, () =>{
+server.listen(process.env.PORT ||3333, () =>{
     console.log('Servidor iniciado! 😁')
 })
 
