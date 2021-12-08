@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var express = require("express");
 var http = require("http");
 var socket_io_1 = require("socket.io");
@@ -13,7 +13,6 @@ io.on('connection', function (socket) {
     });
     socket.on('chat', function (_a) {
         var message = _a.message, id = _a.id, date = _a.date, server = _a.server;
-        console.log(message);
         socket.to(server).emit('messages', { message: message, id: id, date: date });
     });
 });
