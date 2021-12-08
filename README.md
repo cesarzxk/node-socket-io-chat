@@ -28,7 +28,7 @@ npm start
 
 Open [http://localhost:19002](http://localhost:3333) with your browser to see the result.
 
-## :engine: Modifing the server
+## :bulb: Modifing the server
 
 You can start editing the page by modifying `src/index.ts`. The page auto-updates as you edit the file.
 and run after:
@@ -37,8 +37,11 @@ and run after:
 npm run build
 ```
 
-to build the new index.js in src
+to build the new index.js in src, or run in dev mode using:
 
+```bash
+npm run dev
+```
 
 ## :bookmark: Learn More
 
