@@ -4,13 +4,13 @@
   "engines": {
     "node": "16.13.0"
   },
-  "main": "index.cjs",
+  "main": "index.js",
   "license": "MIT",
-  "type": "module",
+  "type": "CommonJS",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore node_modules --exit-child src/index.ts ",
     "build": "tsc src/index.ts",
-    "start": "node src/index.cjs"
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "express": "^4.17.1"
