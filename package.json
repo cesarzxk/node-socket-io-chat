@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore node_modules --exit-child src/index.ts ",
     "build": "tsc src/index.ts",
-    "start": "node .src/index.cjs"
+    "start": "node src/index.cjs"
   },
   "devDependencies": {
     "express": "^4.17.1"
