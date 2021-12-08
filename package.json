@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore node_modules --exit-child src/index.ts ",
-    "build": "tsc src/index.ts",
+    "build": "tsc ./src/index.ts",
     "start": "node ./src/index.js"
   },
   "devDependencies": {
