@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as http from 'http'
-import { Server, Socket} from "socket.io";
+import {Server} from "socket.io";
 const app = express()
 const server = http.createServer(app);
 const io = new Server(server);
@@ -17,13 +17,8 @@ io.on('connection', (socket)=>{
     })
 })
 
-io.on('disconnect', ()=>{
-    console.log('usuario desconectado')
-})
 
-export const rooms = ()=>{}
-
-server.listen(process.env.PORT ||3333, () =>{
+server.listen(process.env.PORT || 3333, () =>{
     console.log('Servidor iniciado! 😁')
 })
 

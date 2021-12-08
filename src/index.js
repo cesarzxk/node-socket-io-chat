@@ -1,6 +1,5 @@
 "use strict";
 exports.__esModule = true;
-exports.rooms = void 0;
 var express = require("express");
 var http = require("http");
 var socket_io_1 = require("socket.io");
@@ -18,9 +17,6 @@ io.on('connection', function (socket) {
         socket.to(server).emit('messages', { message: message, id: id, date: date });
     });
 });
-
-var rooms = function () { };
-exports.rooms = rooms;
 server.listen(process.env.PORT || 3333, function () {
     console.log('Servidor iniciado! 😁');
 });
