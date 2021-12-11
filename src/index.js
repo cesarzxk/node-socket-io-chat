@@ -13,8 +13,11 @@ io.on('connection', function (socket) {
     });
     socket.on('chat', function (_a) {
         var message = _a.message, id = _a.id, date = _a.date, server = _a.server, time = _a.time;
-        console.log(message);
         socket.to(server).emit('messages', { message: message, id: id, date: date, time: time });
+    });
+    socket.on('deleteMessage', function (_a) {
+        var key = _a.key, server = _a.server;
+        socket.to(server).emit('messages', key);
     });
 });
 server.listen(process.env.PORT || 3333, function () {

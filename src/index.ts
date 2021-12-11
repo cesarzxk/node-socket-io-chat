@@ -12,8 +12,11 @@ io.on('connection', (socket)=>{
     })
 
     socket.on('chat', ({message, id, date, server, time})=>{
-        console.log(message);
         socket.to(server).emit('messages', {message, id, date, time})
+    })
+
+    socket.on('deleteMessage',({key, server})=>{
+        socket.to(server).emit('messages', key)
     })
 })
 
