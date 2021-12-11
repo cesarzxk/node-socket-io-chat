@@ -12,8 +12,8 @@ io.on('connection', function (socket) {
         socket.emit('statusJoin', { room: room.code, userId: room.id });
     });
     socket.on('chat', function (_a) {
-        var message = _a.message, id = _a.id, date = _a.date, server = _a.server, time = _a.time;
-        socket.to(server).emit('messages', { message: message, id: id, date: date, time: time });
+        var message = _a.message, id = _a.id, date = _a.date, server = _a.server, time = _a.time, key = _a.key;
+        socket.to(server).emit('messages', { message: message, id: id, date: date, time: time, key: key });
     });
     socket.on('deleteMessage', function (_a) {
         var key = _a.key, server = _a.server;
