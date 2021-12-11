@@ -11,9 +11,9 @@ io.on('connection', (socket)=>{
         socket.emit('statusJoin', {room:room.code, userId:room.id})
     })
 
-    socket.on('chat', ({message, id, date, server})=>{
+    socket.on('chat', ({message, id, date, server, time})=>{
         console.log(message);
-        socket.to(server).emit('messages', {message, id, date})
+        socket.to(server).emit('messages', {message, id, date, time})
     })
 })
 

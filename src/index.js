@@ -1,5 +1,5 @@
 "use strict";
-
+exports.__esModule = true;
 var express = require("express");
 var http = require("http");
 var socket_io_1 = require("socket.io");
@@ -12,8 +12,9 @@ io.on('connection', function (socket) {
         socket.emit('statusJoin', { room: room.code, userId: room.id });
     });
     socket.on('chat', function (_a) {
-        var message = _a.message, id = _a.id, date = _a.date, server = _a.server;
-        socket.to(server).emit('messages', { message: message, id: id, date: date });
+        var message = _a.message, id = _a.id, date = _a.date, server = _a.server, time = _a.time;
+        console.log(message);
+        socket.to(server).emit('messages', { message: message, id: id, date: date, time: time });
     });
 });
 server.listen(process.env.PORT || 3333, function () {
