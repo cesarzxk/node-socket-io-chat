@@ -17,7 +17,7 @@ io.on('connection', function (socket) {
     });
     socket.on('deleteMessage', function (_a) {
         var key = _a.key, server = _a.server;
-        socket.to(server).emit('messages', key);
+        socket.to(server).emit('deleteMessage', key);
     });
 });
 server.listen(process.env.PORT || 3333, function () {
