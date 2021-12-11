@@ -11,8 +11,8 @@ io.on('connection', (socket)=>{
         socket.emit('statusJoin', {room:room.code, userId:room.id})
     })
 
-    socket.on('chat', ({message, id, date, server, time})=>{
-        socket.to(server).emit('messages', {message, id, date, time})
+    socket.on('chat', ({message, id, date, server, time, key})=>{
+        socket.to(server).emit('messages', {message, id, date, time, key})
     })
 
     socket.on('deleteMessage',({key, server})=>{
