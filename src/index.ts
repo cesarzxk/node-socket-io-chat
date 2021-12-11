@@ -16,7 +16,7 @@ io.on('connection', (socket)=>{
     })
 
     socket.on('deleteMessage',({key, server})=>{
-        socket.to(server).emit('messages', key)
+        socket.to(server).emit('deleteMessage', key)
     })
 })
 
