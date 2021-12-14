@@ -9,6 +9,7 @@ io.on('connection', (socket)=>{
     socket.on('join',(room)=>{
         socket.join(room.code)
         socket.to(room.code).emit('messages', {alert:socket.id+' entrou'})
+        socket.emit('statusJoin', { room: room.code, userId: room.id });
     })
 
     socket.on('chat', ({message, id, date, server, time, key})=>{

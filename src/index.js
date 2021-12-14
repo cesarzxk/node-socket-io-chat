@@ -10,6 +10,7 @@ io.on('connection', function (socket) {
     socket.on('join', function (room) {
         socket.join(room.code);
         socket.to(room.code).emit('messages', { alert: socket.id + ' entrou' });
+        socket.emit('statusJoin', { room: room.code, userId: room.id });
     });
     socket.on('chat', function (_a) {
         var message = _a.message, id = _a.id, date = _a.date, server = _a.server, time = _a.time, key = _a.key;
