@@ -8,7 +8,7 @@ const io = new Server(server);
 io.on('connection', (socket)=>{
     socket.on('join',(room)=>{
         socket.join(room.code)
-        socket.to(room).emit('messages', {alert:socket.id+' entrou'})
+        socket.to(room.code).emit('messages', {alert:socket.id+' entrou'})
     })
 
     socket.on('chat', ({message, id, date, server, time, key})=>{
