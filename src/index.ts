@@ -8,7 +8,7 @@ const io = new Server(server);
 io.on('connection', (socket)=>{
     socket.on('join',(room)=>{
         socket.join(room.code)
-        socket.emit('statusJoin', {room:room.code, userId:room.id})
+        socket.to(room).emit('messages', {alert:socket.id+' entrou'})
     })
 
     socket.on('chat', ({message, id, date, server, time, key})=>{
@@ -19,7 +19,6 @@ io.on('connection', (socket)=>{
         socket.to(server).emit('deleteMessage', key)
     })
 })
-
 
 server.listen(process.env.PORT || 3333, () =>{
     console.log('Servidor iniciado! 😁')
